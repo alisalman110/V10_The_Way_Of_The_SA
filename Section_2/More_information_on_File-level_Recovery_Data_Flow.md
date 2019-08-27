@@ -2,7 +2,7 @@
 
 
 
-![Data flow at restore](./pictures/backup_server_data_flow_2.png)
+![Data flow at restore](pictures/backup_server_data_flow_2.png)
 
 When file-level recovery is performed from the Veeam backup console, two mounts are initiated:
 
@@ -26,7 +26,7 @@ Veeam Explorers are installed as part of the backup server and backup console wh
 The Veeam Explorer for SQL Server, SharePoint and Oracle all use a staging server to allow selecting a specific point in time for point-in-time restore. This introduces an additional connection as illustrated below.
 
 
-![Staging Server](./pictures/backup_server_data_flow_3.png)
+![Staging Server](pictures/backup_server_data_flow_3.png)
 
 
 

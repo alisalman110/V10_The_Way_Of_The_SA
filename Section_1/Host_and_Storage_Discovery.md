@@ -3,7 +3,7 @@
 To collect information about the virtual infrastructure all managed vCenters and their connected hosts and datastores are periodically rescanned. This rescan process is visible in the History tab in the Veeam Backup & Replication console. The Host discovery process runs every four hours and all the collected information is stored within the configuration database.
 
 
-![Host and storage discovery](./pictures/backup_server_data_flow_1.png)
+![Host and storage discovery](pictures/backup_server_data_flow_1.png)
 
 ### Best Practise Notes
 
