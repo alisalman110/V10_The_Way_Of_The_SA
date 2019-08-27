@@ -27,7 +27,7 @@ The scanning interval of 10 minutes and 7 days can be changed with the following
 
  During rescan, each present snapshot produces a snapshot clone, mounts to a proxy server, scans the filesystem, lookup for discovered VMs and unmounts. This is repeated for every present snapshot.
 
-### [More in-depth information on this item](./Section_2/More_information_on_Host_and_Storage_Discovery.md).
+### [More in-depth information on this item](./More_information_on_Host_and_Storage_Discovery.md).
 
 
 
