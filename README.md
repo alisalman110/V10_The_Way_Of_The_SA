@@ -1,2 +1,2 @@
 # V10_Layout
-New layoput for BP V10
+New layout for BP V10
