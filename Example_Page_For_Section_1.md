@@ -12,11 +12,10 @@ This section will include the information relevant to the question, Best Practis
 
 
 
-1.  Link 1 in this document to Section 2 which will contain all the information required to explain the best practise
+[Section 2 link to more details](./Example_Page_For_Section_2.md).
 
 
 
 ### Link to external resources such as Help Guide and Vendor websites
 
-
-[Section 2 link to more details](./Example_Page_For_Section_2.md).
+[Link to vSphere User guide on Veeam ](https://helpcenter.veeam.com/docs/backup/vsphere/overview.html?ver=95u4)
