@@ -5,7 +5,7 @@ To collect information about the virtual infrastructure all managed vCenters and
 
 ![Host and storage discovery](../Pictures/backup_server_data_flow_1.png)
 
-### Best Practise Notes
+### Best Practice Notes
 
 The scan of a storage controller performs, depending on the protocol, several tasks on the storage operating system. Therefore it is recommended to have some performance headroom on the controller. If your controller is already running on >90% CPU utilization, keep in mind that the scan might take significant time to complete.
 The scanning interval of 10 minutes and 7 days can be changed with the following registry keys.
