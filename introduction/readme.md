@@ -16,21 +16,14 @@ to external resources for additional information.
 
 The e-book is optimized for
 digital consumption, and the most recent copy is always available at:
-### [bp.veeam.expert](https://bp.veeam.expert/)
+### [veeambp.com](https://www.veeambp.com)
 
 {% else %}
 
 Keep in mind this book is optimized for digital consumption, and the most recent version is always
-available on [bp.veeam.expert](https://bp.veeam.expert/).
-
-The book is available in different formats here:
+available on [veeambp.com](https://www.veeambp.com).
 
 
-| Format | Link |
-| -------|------|
-| PDF    | [click here](https://bp.veeam.expert/) |
-| ePub   | [click here](https://bp.veeam.expert/) |
-| Mobi   | [click here](https://bp.veeam.expert/) |
 
 
 {% endif %}
@@ -61,12 +54,5 @@ refer to the corresponding
 * Matthias Mehrtens
 * Pascal di Marco
 * Paul Szelesi ([@PSzelesi](https://twitter.com/PSzelesi))
-* Phillip Moore
 * Stanislav Simakov
 * Stefan Zimmermann
-
-
-### Old contributors:
-* Preben Berg ([@poulpreben](https://twitter.com/poulpreben))
-* Andreas Neufert ([@AndyandtheVMs](https://twitter.com/AndyandtheVMs))
-* Tom Sightler
