@@ -2,6 +2,7 @@
 
 To perform file-level restores for a Windows-based or other OS VM Veeam mounts all VM disk files from the backup files (stored on the repository server) to a Mount Service.
 
+---
 ### Best Practice Notes
 
 ## File-level Recovery Data Flow
@@ -34,11 +35,11 @@ The Veeam Explorer for SQL Server, SharePoint and Oracle all use a staging serve
 ![Staging Server](../Pictures/backup_server_data_flow_3.png)
 
 
-
+---
 
 ### [More in-depth information on this item](../Section_2/More_information_on_File-level_Recovery_Data_Flow.md).
 
-
+---
 
 ### Link to external resources such as Help Guide and Vendor websites
 
