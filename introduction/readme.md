@@ -3,7 +3,7 @@
 Welcome to the Best Practices guide for Veeam Backup & Replication.
 
 ---
-## About This Guide
+## About This Guide   
 
 This guide is developed by Veeam architects, and its content is also validated
 by support, developers and QA departments to ensure highest possible quality. If
