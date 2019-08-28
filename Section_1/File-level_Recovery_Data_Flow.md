@@ -5,9 +5,6 @@ To perform file-level restores for a Windows-based or other OS VM Veeam mounts a
 ---
 ### Best Practice Notes
 
-## File-level Recovery Data Flow
-
-
 ![Data flow at restore](../Pictures/backup_server_data_flow_2.png)
 
 When file-level recovery is performed from the Veeam backup console, two mounts are initiated:
