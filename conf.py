@@ -59,13 +59,18 @@ html_theme_path = ["_themes", ]
 
 
 html_theme_options = {
-"rightsidebar": True,
+"rightsidebar": False,
 # (True): Put the sidebar on the right side. Defaults to False.
-#stickysidebar (true or false): Make the sidebar “fixed” so that it doesn’t scroll out of view for long body content. This may not work well with all browsers. Defaults to False.
-#collapsiblesidebar (true or false): Add an experimental JavaScript snippet that makes the sidebar collapsible via a button on its side. Defaults to False.
-#externalrefs (true or false): Display external links differently from internal links. Defaults to False.
-#footerbgcolor (CSS color): Background color for the footer line.
-#footertextcolor (CSS color): Text color for the footer line.
+"stickysidebar": True,
+#(true or false): Make the sidebar “fixed” so that it doesn’t scroll out of view for long body content. This may not work well with all browsers. Defaults to False.
+"collapsiblesidebar": True,
+#(true or false): Add an experimental JavaScript snippet that makes the sidebar collapsible via a button on its side. Defaults to False.
+"externalrefs ": True,
+#(true or false): Display external links differently from internal links. Defaults to False.
+"footerbgcolor ": Forestgreen,
+# (CSS color): Background color for the footer line.
+"footertextcolor ": White,
+#(CSS color): Text color for the footer line.
 #sidebarbgcolor (CSS color): Background color for the sidebar.
 #sidebarbtncolor (CSS color): Background color for the sidebar collapse button (used when collapsiblesidebar is True).
 #sidebartextcolor (CSS color): Text color for the sidebar.
