@@ -22,19 +22,20 @@ copyright = '2019, Paul Szelesi'
 author = 'Paul Szelesi'
 
 # The full version, including alpha/beta/rc tags
-release = '0.0.1'
+release = '1.0.0'
 
 
 # -- General configuration ---------------------------------------------------
+#Change Master doc to look for index not master_doc
+master_doc = 'index'
+
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-import sphinx_rtd_theme
+extensions = []
 
-extensions = ["sphinx_rtd_theme",]
 
-master_doc = 'index'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -50,14 +51,9 @@ exclude_patterns = []
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-
-
 html_theme = "classic"
-html_theme_path = ["_themes", ]
 
-
-
-
+#Options for the them
 html_theme_options = {
 "rightsidebar": False,
 # (True): Put the sidebar on the right side. Defaults to False.
