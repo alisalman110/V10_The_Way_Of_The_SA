@@ -50,40 +50,29 @@ exclude_patterns = []
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
+html_logo = ["logo"]
 
-
-html_theme = "classic"
+html_theme = "sphinx_rtd_theme"
 html_theme_path = ["_themes", ]
 
 
 
 
 html_theme_options = {
-"rightsidebar": True,
-# (True): Put the sidebar on the right side. Defaults to False.
-#stickysidebar (true or false): Make the sidebar “fixed” so that it doesn’t scroll out of view for long body content. This may not work well with all browsers. Defaults to False.
-#collapsiblesidebar (true or false): Add an experimental JavaScript snippet that makes the sidebar collapsible via a button on its side. Defaults to False.
-#externalrefs (true or false): Display external links differently from internal links. Defaults to False.
-#footerbgcolor (CSS color): Background color for the footer line.
-#footertextcolor (CSS color): Text color for the footer line.
-#sidebarbgcolor (CSS color): Background color for the sidebar.
-#sidebarbtncolor (CSS color): Background color for the sidebar collapse button (used when collapsiblesidebar is True).
-#sidebartextcolor (CSS color): Text color for the sidebar.
-#sidebarlinkcolor (CSS color): Link color for the sidebar.
-#relbarbgcolor (CSS color): Background color for the relation bar.
-#relbartextcolor (CSS color): Text color for the relation bar.
-#relbarlinkcolor (CSS color): Link color for the relation bar.
-#bgcolor (CSS color): Body background color.
-#textcolor (CSS color): Body text color.
-#linkcolor (CSS color): Body link color.
-#visitedlinkcolor (CSS color): Body color for visited links.
-#headbgcolor (CSS color): Background color for headings.
-#headtextcolor (CSS color): Text color for headings.
-#headlinkcolor (CSS color): Link color for headings.
-#codebgcolor (CSS color): Background color for code blocks.
-#codetextcolor (CSS color): Default text color for code blocks, if not set differently by the highlighting style.
-#bodyfont (CSS font-family): Font for normal text.
-#headfont (CSS font-family): Font for headings.
+    'canonical_url': '',
+    'analytics_id': 'UA-XXXXXXX-1',  #  Provided by Google in your dashboard
+    'logo_only': False,
+    'display_version': False,
+    'prev_next_buttons_location': 'bottom',
+    'style_external_links': False,
+    'vcs_pageview_mode': '',
+    'style_nav_header_background': 'green',
+    # Toc options
+    'collapse_navigation': True,
+    'sticky_navigation': True,
+    'navigation_depth': 4,
+    'includehidden': True,
+    'titles_only': False
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
