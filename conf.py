@@ -65,11 +65,11 @@ html_theme_options = {
 #(true or false): Make the sidebar “fixed” so that it doesn’t scroll out of view for long body content. This may not work well with all browsers. Defaults to False.
 "collapsiblesidebar": True,
 #(true or false): Add an experimental JavaScript snippet that makes the sidebar collapsible via a button on its side. Defaults to False.
-"externalrefs ": True,
+"externalrefs": True,
 #(true or false): Display external links differently from internal links. Defaults to False.
-"footerbgcolor ": green,
+"footerbgcolor": 'green',
 # (CSS color): Background color for the footer line.
-"footertextcolor ": white,
+"footertextcolor ": 'white',
 #(CSS color): Text color for the footer line.
 #sidebarbgcolor (CSS color): Background color for the sidebar.
 #sidebarbtncolor (CSS color): Background color for the sidebar collapse button (used when collapsiblesidebar is True).
