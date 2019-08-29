@@ -73,12 +73,13 @@ html_theme_options = {
 #(CSS color): Text color for the footer line.
 "sidebarbgcolor": 'white',
 # (CSS color): Background color for the sidebar.
-#sidebarbtncolor (CSS color): Background color for the sidebar collapse button (used when collapsiblesidebar is True).
+"sidebarbtncolor":'blue',
+#(CSS color): Background color for the sidebar collapse button (used when collapsiblesidebar is True).
 "sidebartextcolor": 'darkgreen',
 #(CSS color): Text color for the sidebar.
 "sidebarlinkcolor":'green',
 #(CSS color): Link color for the sidebar.
-"relbarbgcolor": 'blue',
+"relbarbgcolor": 'darkgreen',
 #(CSS color): Background color for the relation bar.
 "relbartextcolor": 'white',
 #(CSS color): Text color for the relation bar.
