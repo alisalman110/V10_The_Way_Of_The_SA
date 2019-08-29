@@ -1,3 +1,5 @@
+Host and Storage Discovery
+==========================
 # **Host and Storage Discovery**
 
 To collect information about the virtual infrastructure all managed vCenters and their connected hosts and datastores are periodically rescanned. This rescan process is visible in the History tab in the Veeam Backup & Replication console. The Host discovery process runs every four hours and all the collected information is stored within the configuration database.
@@ -12,17 +14,17 @@ The scanning interval of 10 minutes and 7 days can be changed with the following
 
 *Defines in seconds how frequent we should monitor SAN infrastructure and run incremental rescan in case of new new instances*
 
-**Path:** HKEY_LOCAL_MACHINE\SOFTWARE\Veeam\Veeam Backup and Replication  
-**Key:** SanMonitorTimeout  
-**Type:** REG_DWORD  
-**Default** value: 600  
+**Path:** HKEY_LOCAL_MACHINE\SOFTWARE\Veeam\Veeam Backup and Replication
+**Key:** SanMonitorTimeout
+**Type:** REG_DWORD
+**Default** value: 600
 
 *Defines in days how frequent we should initiate periodic full rescan after Veeam Backup service rescan Per default Veeam will scan all volumes and LUNs on the storage subsystem.*
 
-**Path:** HKEY_LOCAL_MACHINE\SOFTWARE\Veeam\Veeam Backup and Replication  
-**Key:** SanRescan_Periodically_Days  
-**Type:** REG_DWORD  
-**Default** value: 7  
+**Path:** HKEY_LOCAL_MACHINE\SOFTWARE\Veeam\Veeam Backup and Replication
+**Key:** SanRescan_Periodically_Days
+**Type:** REG_DWORD
+**Default** value: 7
 
 
  During rescan, each present snapshot produces a snapshot clone, mounts to a proxy server, scans the filesystem, lookup for discovered VMs and unmounts. This is repeated for every present snapshot.
