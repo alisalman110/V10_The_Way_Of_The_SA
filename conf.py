@@ -78,8 +78,9 @@ html_theme_options = {
 #(CSS color): Text color for the sidebar.
 "sidebarlinkcolor":'green',
 #(CSS color): Link color for the sidebar.
-#relbarbgcolor (CSS color): Background color for the relation bar.
-"relbartextcolor": 'blue',
+"relbarbgcolor": 'blue',
+#(CSS color): Background color for the relation bar.
+"relbartextcolor": 'white',
 #(CSS color): Text color for the relation bar.
 "relbarlinkcolor": 'white',
 #(CSS color): Link color for the relation bar.
