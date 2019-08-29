@@ -69,7 +69,7 @@ html_theme_options = {
 #(true or false): Display external links differently from internal links. Defaults to False.
 "footerbgcolor": 'white',
 # (CSS color): Background color for the footer line.
-"footertextcolor ": 'darkgreen',
+"footertextcolor ": 'white',
 #(CSS color): Text color for the footer line.
 "sidebarbgcolor": 'white',
 # (CSS color): Background color for the sidebar.
@@ -79,7 +79,7 @@ html_theme_options = {
 #sidebarlinkcolor (CSS color): Link color for the sidebar.
 #relbarbgcolor (CSS color): Background color for the relation bar.
 #relbartextcolor (CSS color): Text color for the relation bar.
-"relbarlinkcolor": 'green',
+"relbarlinkcolor": 'blue',
 #(CSS color): Link color for the relation bar.
 "bgcolor": 'white',
 #(CSS color): Body background color.
@@ -89,7 +89,7 @@ html_theme_options = {
 #(CSS color): Body link color.
 "visitedlinkcolor": 'darkgreen',
 #(CSS color): Body color for visited links.
-"headbgcolor": 'green',
+"headbgcolor": 'white',
 # (CSS color): Background color for headings.
 #headtextcolor (CSS color): Text color for headings.
 #headlinkcolor (CSS color): Link color for headings.
