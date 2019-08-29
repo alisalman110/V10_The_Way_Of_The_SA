@@ -67,14 +67,15 @@ html_theme_options = {
 #(true or false): Add an experimental JavaScript snippet that makes the sidebar collapsible via a button on its side. Defaults to False.
 "externalrefs": True,
 #(true or false): Display external links differently from internal links. Defaults to False.
-"footerbgcolor": 'forestgreen',
+"footerbgcolor": 'white',
 # (CSS color): Background color for the footer line.
-"footertextcolor ": 'white',
+"footertextcolor ": 'darkgreen',
 #(CSS color): Text color for the footer line.
-"sidebarbgcolor": 'forestgreen',
+"sidebarbgcolor": 'white',
 # (CSS color): Background color for the sidebar.
 #sidebarbtncolor (CSS color): Background color for the sidebar collapse button (used when collapsiblesidebar is True).
-#sidebartextcolor (CSS color): Text color for the sidebar.
+"sidebartextcolor": 'darkgreen'
+#(CSS color): Text color for the sidebar.
 #sidebarlinkcolor (CSS color): Link color for the sidebar.
 #relbarbgcolor (CSS color): Background color for the relation bar.
 #relbartextcolor (CSS color): Text color for the relation bar.
