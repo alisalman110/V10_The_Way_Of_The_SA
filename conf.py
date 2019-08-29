@@ -85,9 +85,12 @@ html_theme_options = {
 #(CSS color): Body background color.
 "textcolor": 'black',
 #(CSS color): Body text color.
-#linkcolor (CSS color): Body link color.
-#visitedlinkcolor (CSS color): Body color for visited links.
-#headbgcolor (CSS color): Background color for headings.
+"linkcolor": 'darkgreen',
+#(CSS color): Body link color.
+"visitedlinkcolor": 'darkgreen',
+#(CSS color): Body color for visited links.
+"headbgcolor": 'green',
+# (CSS color): Background color for headings.
 #headtextcolor (CSS color): Text color for headings.
 #headlinkcolor (CSS color): Link color for headings.
 #codebgcolor (CSS color): Background color for code blocks.
