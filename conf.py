@@ -79,10 +79,10 @@ html_theme_options = {
 #relbarbgcolor (CSS color): Background color for the relation bar.
 #relbartextcolor (CSS color): Text color for the relation bar.
 #relbarlinkcolor (CSS color): Link color for the relation bar.
-"bgcolor": 'white', 
-(CSS color): Body background color.
+"bgcolor": 'white',
+#(CSS color): Body background color.
 "textcolor": 'black',
-(CSS color): Body text color.
+#(CSS color): Body text color.
 #linkcolor (CSS color): Body link color.
 #visitedlinkcolor (CSS color): Body color for visited links.
 #headbgcolor (CSS color): Background color for headings.
