@@ -67,6 +67,7 @@ exclude_patterns = []
 html_theme = "sphinx_rtd_theme"
 
 
+
 #Options for the them
 html_theme_options = {
     'canonical_url': '',
@@ -76,7 +77,7 @@ html_theme_options = {
     'prev_next_buttons_location': 'bottom',
     'style_external_links': False,
     'vcs_pageview_mode': '',
-    #'style_nav_header_background': 'darkslategrey',
+     #'style_nav_header_background': 'darkslategrey',
     # Toc options
     'collapse_navigation': True,
     'sticky_navigation': True,
