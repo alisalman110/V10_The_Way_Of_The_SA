@@ -29,6 +29,12 @@ release = '1.0.0'
 #Change Master doc to look for index not master_doc
 master_doc = 'index'
 
+# Add suffix to read file types
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.txt': 'restructuredtext',
+    '.md': 'markdown',
+}
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
@@ -51,6 +57,6 @@ exclude_patterns = []
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = "alabaster"
+html_theme = "haiku"
 
 html_static_path = ['_static']
