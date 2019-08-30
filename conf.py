@@ -29,6 +29,10 @@ release = '1.0.0'
 #Change Master doc to look for index not master_doc
 master_doc = 'index'
 
+
+# Import the theme
+import sphinx_rtd_theme
+
 # Add suffix to read file types
 source_suffix = {
     '.rst': 'restructuredtext',
@@ -39,7 +43,8 @@ source_suffix = {
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['recommonmark']
+extensions = ['recommonmark', 
+"sphinx_rtd_theme",]
 
 
 
@@ -57,6 +62,6 @@ exclude_patterns = []
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = "classic"
+html_theme = "sphinx_rtd_theme"
 
 html_static_path = ['_static']
