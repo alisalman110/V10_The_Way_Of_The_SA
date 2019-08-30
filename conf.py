@@ -29,6 +29,8 @@ release = '1.0.0'
 #Change Master doc to look for index not master_doc
 master_doc = 'index'
 
+#Insert Logo
+html_logo = 'docs/logo_1.jpg'
 
 # Import the theme
 import sphinx_rtd_theme
