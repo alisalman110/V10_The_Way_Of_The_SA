@@ -2634,15 +2634,15 @@ button[disabled]{
     transition:all .1s linear
 }
 .btn-hover{
-    background:#2e8ece;
+    background:#2F4F4F;
     color:#fff
 }
 .btn:hover{
-    background:#2cc36b;
+    background:#2F4F4F;
     color:#fff
 }
 .btn:focus{
-    background:#2cc36b;
+    background:#2F4F4F;
     outline:0
 }
 .btn:active{
