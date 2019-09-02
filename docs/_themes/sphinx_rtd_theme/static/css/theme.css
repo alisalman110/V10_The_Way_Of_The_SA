@@ -48,7 +48,7 @@ dfn{
     font-style:italic
 }
 ins{
-    background:#7FFF00;
+    background:#ff9;
     text-decoration:none
 }
 ins,mark{
@@ -2494,7 +2494,7 @@ big,small{
     padding:12px;
     line-height:24px;
     margin-bottom:24px;
-    background:#e7f2fa
+    background:#7FFF00
 }
 .rst-content .admonition-title,.wy-alert-title{
     font-weight:700;
