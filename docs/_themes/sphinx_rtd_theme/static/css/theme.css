@@ -2548,7 +2548,7 @@ big,small{
     display:block;
     width:300px;
     background:transparent;
-    color:#7fff00;
+    color:#fff;
     text-align:center;
     box-shadow:0 5px 5px 0 rgba(0,0,0,.1);
     padding:0 24px;
@@ -2562,16 +2562,16 @@ big,small{
     transition:all .3s ease-in
 }
 .wy-tray-container li.wy-tray-item-success{
-    background:#7fff00
+    background:#27ae60
 }
 .wy-tray-container li.wy-tray-item-info{
-    background:#7fff00
+    background:#2F4F4F
 }
 .wy-tray-container li.wy-tray-item-warning{
-    background:#7fff00
+    background:#e67e22
 }
 .wy-tray-container li.wy-tray-item-danger{
-    background:#7fff00
+    background:#e74c3c
 }
 .wy-tray-container li.on{
     opacity:1;
@@ -2638,11 +2638,11 @@ button[disabled]{
     color:#fff
 }
 .btn:hover{
-    background:#2cc36b;
+    background:#7fff00;
     color:#fff
 }
 .btn:focus{
-    background:#2cc36b;
+    background:#7fff00;
     outline:0
 }
 .btn:active{
