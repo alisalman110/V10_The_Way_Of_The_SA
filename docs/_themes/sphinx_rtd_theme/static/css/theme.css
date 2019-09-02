@@ -2635,11 +2635,11 @@ button[disabled]{
 }
 .btn-hover{
     background:#2F4F4F;
-    color:#fff
+    color:#2F4F4F
 }
 .btn:hover{
     background:#2F4F4F;
-    color:#fff
+    color:#2F4F4F
 }
 .btn:focus{
     background:#2F4F4F;
@@ -2650,7 +2650,7 @@ button[disabled]{
     padding:8px 12px 6px
 }
 .btn:visited{
-    color:#fff
+    color:#2F4F4F
 }
 .btn-disabled,.btn-disabled:active,.btn-disabled:focus,.btn-disabled:hover,.btn:disabled{
     background-image:none;
@@ -2668,7 +2668,7 @@ button[disabled]{
     font-size:80%
 }
 .btn-info{
-    background-color:#2980b9!important
+    background-color:#2F4F4F!important
 }
 .btn-info:hover{
     background-color:#2e8ece!important
