@@ -3908,7 +3908,7 @@ html{
     clear:both
 }
 .wy-nav-top a{
-    color:#fff;
+    color:#2F4F4F;
     font-weight:700
 }
 .wy-nav-top img{
@@ -4246,7 +4246,7 @@ footer p{
     display:block;
     margin:0 0 24px 24px;
     padding:24px;
-    background:#7fff00;
+    background:#2F4F4F;
     border:1px solid #e1e4e5
 }
 .rst-content .sidebar dl,.rst-content .sidebar p,.rst-content .sidebar ul{
@@ -4305,7 +4305,7 @@ footer p{
     margin-bottom:24px
 }
 .rst-content table.docutils th{
-    border-color:#FFFFFF
+    border-color:#e1e4e5
 }
 .rst-content table.docutils td .last,.rst-content table.docutils td .last :last-child{
     margin-bottom:0
