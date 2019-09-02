@@ -4372,7 +4372,7 @@ footer p{
     margin:6px 0;
     font-size:90%;
     line-height:normal;
-    background:#e7f2fa;
+    background:#7FFF00;
     color:#2F4F4F;
     border-top:3px solid #2F4F4F;
     padding:6px;
@@ -4389,7 +4389,7 @@ footer p{
     margin-bottom:6px;
     border:none;
     border-left:3px solid #ccc;
-    background:#7fff00;
+    background:#f0f0f0;
     color:#555
 }
 .rst-content dl:not(.docutils) dl dt .headerlink{
