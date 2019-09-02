@@ -3834,7 +3834,7 @@ html{
 }
 .wy-nav .wy-menu-vertical a:hover{
     background-color:#2F4F4F;
-    color:#fff
+    color:#ffffff
 }
 [data-menu-wrap]{
     -webkit-transition:all .2s ease-in;
@@ -3892,7 +3892,7 @@ html{
 .wy-nav-top{
     display:none;
     background:#2F4F4F;
-    color:#fff;
+    color:#ffffff;
     padding:.4045em .809em;
     position:relative;
     line-height:50px;
