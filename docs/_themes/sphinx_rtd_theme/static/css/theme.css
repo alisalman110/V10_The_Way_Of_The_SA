@@ -2494,12 +2494,12 @@ big,small{
     padding:12px;
     line-height:24px;
     margin-bottom:24px;
-    background:#7FFF00
+    background:#e7f2fa
 }
 .rst-content .admonition-title,.wy-alert-title{
     font-weight:700;
     display:block;
-    color:#fff;
+    color:#7FFF00;
     background:#6ab0de;
     padding:6px 12px;
     margin:-12px -12px 12px
