@@ -3927,7 +3927,7 @@ html{
 }
 .wy-nav-content-wrap{
     margin-left:300px;
-    background:#fcfcfc;
+    background:#7fff000;
     min-height:100%
 }
 .wy-nav-content{
@@ -4246,7 +4246,7 @@ footer p{
     display:block;
     margin:0 0 24px 24px;
     padding:24px;
-    background:#7fff00;
+    background:#f3f6f6;
     border:1px solid #e1e4e5
 }
 .rst-content .sidebar dl,.rst-content .sidebar p,.rst-content .sidebar ul{
