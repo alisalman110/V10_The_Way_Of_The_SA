@@ -2526,7 +2526,7 @@ big,small{
     background:#1abc9c
 }
 .rst-content .wy-alert-neutral.admonition,.rst-content .wy-alert-neutral.admonition-todo,.rst-content .wy-alert-neutral.attention,.rst-content .wy-alert-neutral.caution,.rst-content .wy-alert-neutral.danger,.rst-content .wy-alert-neutral.error,.rst-content .wy-alert-neutral.hint,.rst-content .wy-alert-neutral.important,.rst-content .wy-alert-neutral.note,.rst-content .wy-alert-neutral.seealso,.rst-content .wy-alert-neutral.tip,.rst-content .wy-alert-neutral.warning,.wy-alert.wy-alert-neutral{
-    background:#7fff00
+    background:#f3f6f6
 }
 .rst-content .wy-alert-neutral.admonition-todo .admonition-title,.rst-content .wy-alert-neutral.admonition-todo .wy-alert-title,.rst-content .wy-alert-neutral.admonition .admonition-title,.rst-content .wy-alert-neutral.admonition .wy-alert-title,.rst-content .wy-alert-neutral.attention .admonition-title,.rst-content .wy-alert-neutral.attention .wy-alert-title,.rst-content .wy-alert-neutral.caution .admonition-title,.rst-content .wy-alert-neutral.caution .wy-alert-title,.rst-content .wy-alert-neutral.danger .admonition-title,.rst-content .wy-alert-neutral.danger .wy-alert-title,.rst-content .wy-alert-neutral.error .admonition-title,.rst-content .wy-alert-neutral.error .wy-alert-title,.rst-content .wy-alert-neutral.hint .admonition-title,.rst-content .wy-alert-neutral.hint .wy-alert-title,.rst-content .wy-alert-neutral.important .admonition-title,.rst-content .wy-alert-neutral.important .wy-alert-title,.rst-content .wy-alert-neutral.note .admonition-title,.rst-content .wy-alert-neutral.note .wy-alert-title,.rst-content .wy-alert-neutral.seealso .admonition-title,.rst-content .wy-alert-neutral.seealso .wy-alert-title,.rst-content .wy-alert-neutral.tip .admonition-title,.rst-content .wy-alert-neutral.tip .wy-alert-title,.rst-content .wy-alert-neutral.warning .admonition-title,.rst-content .wy-alert-neutral.warning .wy-alert-title,.rst-content .wy-alert.wy-alert-neutral .admonition-title,.wy-alert.wy-alert-neutral .rst-content .admonition-title,.wy-alert.wy-alert-neutral .wy-alert-title{
     color:#404040;
@@ -2674,7 +2674,7 @@ button[disabled]{
     background-color:#2e8ece!important
 }
 .btn-neutral{
-    background-color:#7fff00!important;
+    background-color:#f3f6f6!important;
     color:#404040!important
 }
 .btn-neutral:hover{
@@ -3095,7 +3095,7 @@ input[type=checkbox][disabled],input[type=radio][disabled]{
     padding:0 8px;
     display:inline-block;
     font-size:80%;
-    background-color:#7fff00;
+    background-color:#f3f6f6;
     border:1px solid #ccc;
     color:#999
 }
@@ -3331,7 +3331,7 @@ input[type=checkbox][disabled],input[type=radio][disabled]{
     font-size:80%
 }
 .rst-content table.docutils:not(.field-list) tr:nth-child(2n-1) td,.wy-table-backed,.wy-table-odd td,.wy-table-striped tr:nth-child(2n-1) td{
-    background-color:#7fff00
+    background-color:#f3f6f6
 }
 .rst-content table.docutils,.wy-table-bordered-all{
     border:1px solid #e1e4e5
@@ -3927,7 +3927,7 @@ html{
 }
 .wy-nav-content-wrap{
     margin-left:300px;
-    background:#2F4F4F;
+    background:#fcfcfc;
     min-height:100%
 }
 .wy-nav-content{
