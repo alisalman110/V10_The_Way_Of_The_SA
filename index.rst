@@ -22,9 +22,5 @@ Guide
 	Host and Storage Discovery Details <Section_2/More_information_on_Host_and_Storage_Discovery>
 	  File Level Recovery Data Flow Details <Section_2/More_information_on_File-level_Recovery_Data_Flow>
 
-Indices and tables
-==================
 
-* :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
