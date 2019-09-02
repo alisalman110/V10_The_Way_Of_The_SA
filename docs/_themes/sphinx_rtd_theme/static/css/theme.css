@@ -2674,7 +2674,7 @@ button[disabled]{
     background-color:#2e8ece!important
 }
 .btn-neutral{
-    background-color:#f3f6f6!important;
+    background-color:#7fff00!important;
     color:#404040!important
 }
 .btn-neutral:hover{
@@ -2706,7 +2706,7 @@ button[disabled]{
     background-color:#222
 }
 .btn-invert:hover{
-    background-color:#2f2f2f!important
+    background-color:#7fff00!important
 }
 .btn-link{
     background-color:transparent!important;
@@ -3095,7 +3095,7 @@ input[type=checkbox][disabled],input[type=radio][disabled]{
     padding:0 8px;
     display:inline-block;
     font-size:80%;
-    background-color:#f3f6f6;
+    background-color:#7fff00;
     border:1px solid #ccc;
     color:#999
 }
@@ -3331,7 +3331,7 @@ input[type=checkbox][disabled],input[type=radio][disabled]{
     font-size:80%
 }
 .rst-content table.docutils:not(.field-list) tr:nth-child(2n-1) td,.wy-table-backed,.wy-table-odd td,.wy-table-striped tr:nth-child(2n-1) td{
-    background-color:#f3f6f6
+    background-color:#7fff00
 }
 .rst-content table.docutils,.wy-table-bordered-all{
     border:1px solid #e1e4e5
