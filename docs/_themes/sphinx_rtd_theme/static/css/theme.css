@@ -2532,11 +2532,11 @@ big,small{
     background:#f3f6f6
 }
 .rst-content .wy-alert-neutral.admonition-todo .admonition-title,.rst-content .wy-alert-neutral.admonition-todo .wy-alert-title,.rst-content .wy-alert-neutral.admonition .admonition-title,.rst-content .wy-alert-neutral.admonition .wy-alert-title,.rst-content .wy-alert-neutral.attention .admonition-title,.rst-content .wy-alert-neutral.attention .wy-alert-title,.rst-content .wy-alert-neutral.caution .admonition-title,.rst-content .wy-alert-neutral.caution .wy-alert-title,.rst-content .wy-alert-neutral.danger .admonition-title,.rst-content .wy-alert-neutral.danger .wy-alert-title,.rst-content .wy-alert-neutral.error .admonition-title,.rst-content .wy-alert-neutral.error .wy-alert-title,.rst-content .wy-alert-neutral.hint .admonition-title,.rst-content .wy-alert-neutral.hint .wy-alert-title,.rst-content .wy-alert-neutral.important .admonition-title,.rst-content .wy-alert-neutral.important .wy-alert-title,.rst-content .wy-alert-neutral.note .admonition-title,.rst-content .wy-alert-neutral.note .wy-alert-title,.rst-content .wy-alert-neutral.seealso .admonition-title,.rst-content .wy-alert-neutral.seealso .wy-alert-title,.rst-content .wy-alert-neutral.tip .admonition-title,.rst-content .wy-alert-neutral.tip .wy-alert-title,.rst-content .wy-alert-neutral.warning .admonition-title,.rst-content .wy-alert-neutral.warning .wy-alert-title,.rst-content .wy-alert.wy-alert-neutral .admonition-title,.wy-alert.wy-alert-neutral .rst-content .admonition-title,.wy-alert.wy-alert-neutral .wy-alert-title{
-    color:#7FFF00;
-    background:#7FFF00
+    color:#404040;
+    background:#e1e4e5
 }
 .rst-content .wy-alert-neutral.admonition-todo a,.rst-content .wy-alert-neutral.admonition a,.rst-content .wy-alert-neutral.attention a,.rst-content .wy-alert-neutral.caution a,.rst-content .wy-alert-neutral.danger a,.rst-content .wy-alert-neutral.error a,.rst-content .wy-alert-neutral.hint a,.rst-content .wy-alert-neutral.important a,.rst-content .wy-alert-neutral.note a,.rst-content .wy-alert-neutral.seealso a,.rst-content .wy-alert-neutral.tip a,.rst-content .wy-alert-neutral.warning a,.wy-alert.wy-alert-neutral a{
-    color:#7FFF00
+    color:#2980b9
 }
 .rst-content .admonition-todo p:last-child,.rst-content .admonition p:last-child,.rst-content .attention p:last-child,.rst-content .caution p:last-child,.rst-content .danger p:last-child,.rst-content .error p:last-child,.rst-content .hint p:last-child,.rst-content .important p:last-child,.rst-content .note p:last-child,.rst-content .seealso p:last-child,.rst-content .tip p:last-child,.rst-content .warning p:last-child,.wy-alert p:last-child{
     margin-bottom:0
@@ -2551,7 +2551,7 @@ big,small{
     display:block;
     width:300px;
     background:transparent;
-    color:#7FFF00;
+    color:#fff;
     text-align:center;
     box-shadow:0 5px 5px 0 rgba(0,0,0,.1);
     padding:0 24px;
@@ -2565,7 +2565,7 @@ big,small{
     transition:all .3s ease-in
 }
 .wy-tray-container li.wy-tray-item-success{
-    background:#7FFF00
+    background:#27ae60
 }
 .wy-tray-container li.wy-tray-item-info{
     background:#2980b9
@@ -2618,7 +2618,7 @@ button[disabled]{
     padding:6px 12px 8px;
     color:#fff;
     border:1px solid rgba(0,0,0,.1);
-    background-color:#27ae60;
+    background-color:#7FFF00;
     text-decoration:none;
     font-weight:400;
     font-family:Lato,proxima-nova,Helvetica Neue,Arial,sans-serif;
@@ -2637,15 +2637,15 @@ button[disabled]{
     transition:all .1s linear
 }
 .btn-hover{
-    background:#2e8ece;
+    background:#7FFF00;
     color:#fff
 }
 .btn:hover{
-    background:#2cc36b;
+    background:#7FFF00;
     color:#fff
 }
 .btn:focus{
-    background:#2cc36b;
+    background:#7FFF00;
     outline:0
 }
 .btn:active{
