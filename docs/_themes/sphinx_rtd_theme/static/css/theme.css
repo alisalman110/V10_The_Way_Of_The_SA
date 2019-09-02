@@ -4382,7 +4382,7 @@ footer p{
     color:#2F4F4F
 }
 .rst-content dl:not(.docutils) dt .headerlink{
-    color:#404040;
+    color:#7fff00;
     font-size:100%!important
 }
 .rst-content dl:not(.docutils) dl dt{
