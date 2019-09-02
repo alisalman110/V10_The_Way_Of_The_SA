@@ -4265,7 +4265,7 @@ footer p{
     font-size:100%
 }
 .rst-content .highlighted{
-    background:#7fff00;
+    background:#f1c40f;
     display:inline-block;
     font-weight:700;
     padding:0 6px
@@ -4342,7 +4342,7 @@ footer p{
 }
 .rst-content code.xref,.rst-content tt.xref,a .rst-content code,a .rst-content tt{
     font-weight:700;
-    color:#404040
+    color:#7fff00
 }
 .rst-content kbd,.rst-content pre,.rst-content samp{
     font-family:SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,Courier,monospace
