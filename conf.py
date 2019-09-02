@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Veeam Best Practise 9.5u4a'
-copyright = '2019, Paul Szelesi'
+copyright = '2019, Veeam Solutions Architects'
 author = 'Paul Szelesi'
 
 # The full version, including alpha/beta/rc tags
