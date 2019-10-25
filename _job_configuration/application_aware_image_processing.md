@@ -57,6 +57,7 @@ Any Windows server managed by Veeam Backup and Replication can be selected to ac
 
 For details on network configuration refer to the section "Required ports" below.
 
+<!-- Ed removed - too much detail?
 **Tip:** If the backup server has no network connection to the VMs and deploying additional guest interaction proxies is not practical/possible (for example, service provider environments), order in which backup server or guest interaction proxy tries to communicate to a VM can be changed using the following registry key:
 
 |       |     |
@@ -69,13 +70,14 @@ For details on network configuration refer to the section "Required ports" below
 |       |     |
 
 RPC connection means injecting the file via the "ADMIN$" share on the target VM. See Veeam Knowledge Base article at <https://www.veeam.com/kb1230> for more information. Consider that this is a global setting that will be applied on the Veeam backup server level and affects all jobs with application-aware image processing.
-
+-->
 ## Guest Access Credentials
 
 Depending on the VM guest OS processing options selected (enabled or disabled application-aware image processing) and on the guest access method, you may need to supply access credentials for the guest OS, as described in the tables below.
 
+<!-- 
 **Tip:** To verify the credentials you supplied on the Guest Processing step of the job wizard, click **Test Now** button.
-
+-->
 ### Windows OS
 
 | Application-Aware Image Processing (AAIP) | VMware Tools Quiescence | Veeam via VIX | Veeam via RPC | Disabled (crash-consistent) |

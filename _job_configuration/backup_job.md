@@ -8,12 +8,6 @@ Veeam Backup and Replication allows you to flexibly select objects to add to the
 
 This screen also provides an advanced object exclusion tool that allows you to select a parent object and then exclude child objects, or even individual disks within a VM.
 
-**Note** When selecting very high level containers with many virtual machines, such as datacenters, clusters or large folders, it is important to keep in mind that tape archive jobs, or SureBackup jobs with linked jobs cannot exclude certain objects from being processed
-
-
-More guidelines on object selection are listed below.
-
-**Important:** Veeam Backup and Replication supports encrypted VMs (in vSphere 6.5) but the resulting backups will contain unencrypted data. Thus it is strongly recommended to enable in transit and at rest job level encryption to ensure safety of the data. For more details on requirements and limitations of the backup of encrypted VMs refer to the [corresponding section](https://helpcenter.veeam.com/docs/backup/vsphere/encrypted_vms_backup.html?ver=95) of the User Guide.
 
 ### Increasing Deduplication Rate
 
@@ -107,8 +101,6 @@ For example, you can back up a cluster residing on a multiple blade chassis. In 
 Dedicated proxies can be also very helpful if you use a stretched cluster and do not want proxy traffic to cross over inter-switch links.
 
 See the illustration below as a good starting point to reach and keep control on high backup throughput. In this example, administrator wants to keep network traffic as much as possible inside the chassis; only the proxy-to-repository traffic goes via an external link.
-
-![](backup_job_1.png)
 
 You can use [Proxy Affinity](https://helpcenter.veeam.com/docs/backup/vsphere/proxy_affinity.html?ver=95) to allow only specific proxies to interact with a given repository.
 

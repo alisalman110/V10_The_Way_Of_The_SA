@@ -6,8 +6,6 @@ Veeam Backup & Replication stores backups on disk using a simple, self-contained
 
 Backup mode directly influences disk I/O on both production storage and backup repository, and backups size; for these reasons it is recommended to carefully review capabilities of the destination storage when selecting one. Take a look at [Deduplication Appliances](/resource_planning/repository_type_dedupe.md#job-configuration) section of this guide for important details on using dedicated deduplicating hardware appliances for storing backups.
 
-For a graphical representation of the mentioned backup modes in this section, please see [Veeam KB1799](https://www.veeam.com/kb1799).
-
 As a generic overview for I/O impact of the backup modes, please see this table:
 
 | Method                                     | I/O impact on destination storage                             |
@@ -32,8 +30,6 @@ The first time a job is run it always performs an active full backup. During thi
 
 Each time an active full is performed (either on schedule or by manually triggering the Active Full command), a new .VBK file is created by reading all data from the production storage. Following incremental backups are stored in incremental backup files (.VIB).
 
-![](../media/image30.png)
-
 When performing active full backups, all blocks are re-read from the source storage.
 
 #### I/O Impact of Active Full
@@ -52,8 +48,6 @@ Forward incremental backup provides good performance with almost any storage and
 ### Synthetic Full
 
 Synthetic full reads the data already stored in the most recent backup chain (full and its dependent incrementals) to create a new full backup directly into the destination storage.
-
-![](../media/image31.png)
 
 If a synthetic full is scheduled, when the job runs, it first creates a normal incremental backup to collect the most recent changes.
 
@@ -78,8 +72,6 @@ Due to the way synthetic full works, having many smaller backups jobs with fewer
 
 Forever forward incremental method creates one full backup file (VBK) on the first execution, and then only incremental backups (VIBs) are created. This method allows backup space to be utilized efficiently, as there is only a single full backup on disk, and when the desired retention is reached a merge process is initiated. It reads the oldest incremental backup and writes its content inside the full file, virtually moving it forward in the timeline where the merged incremental was before.
 
-![](../media/image32.png)
-
 ### I/O Impact of Merge Process
 
 The merging process is performed at the end of the backup job once the retention for the job has been reached. This process will read the blocks from the oldest incremental backup (VIB file) and write those blocks into the VBK file; the I/O pattern  is a 50%-50% read-write mix on the target storage. The time required to perform the merge depends on the size of the incremental data and the random I/O performance of the underlying storage.
@@ -98,8 +90,6 @@ Like with synthetic full, it is recommended to have many smaller jobs with a lim
 ## Reverse Incremental
 
 As every other backup method, during its first run reverse incremental backup creates a full backup file (VBK). All subsequent backups are incremental, that is, only changed data blocks are copied. During the incremental backup, updated blocks are written directly into the full backup file, while replaced blocks are taken out and written into a rollback file (.VRB).
-
-![](../media/image33.png)
 
 This method provides space-efficient backup, as there is only one full backup to store. It also facilitates retention, since removing old restore points is simply a matter of deleting old VRB files.
 

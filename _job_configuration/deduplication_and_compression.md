@@ -100,19 +100,21 @@ Compression settings can be changed on the job at any time and any new backup se
 
 The option "Exclude deleted file blocks" is the third configurable option in job settings. In several places you will see references to this feature under the name "BitLooker".
 
-![BitLooker](./deduplication_and_compression_bitlooker.png)
-
 When enabled, the proxy server will perform inline analysis of the Master File Table (MFT) of NTFS file systems and automatically skip blocks that have been marked as deleted.
 
-When upgrading from versions prior to v9.0, this setting is disabled for existing backup jobs. To enable it for existing jobs, use the following PowerShell commands.
 
-~~~
+<!-- Ed commented it out, not sure if needed
+
+When upgrading from versions prior to v9.0, this setting is disabled for existing backup jobs. To enable it for existing jobs, use the following PowerShell commands.
 Add-PSSnapIn VeeamPSSnapin;
 
+```
 Foreach ($job in Get-VBRJob) {
   $job.Options.ViSourceOptions.DirtyBlocksNullingEnabled = $true;
   $job.SetOptions($job.Options)
 }
-~~~
+```
+
+-->
 
 It is always recommended to leave BitLooker enabled, as it will reduce the amount of backup storage space required.

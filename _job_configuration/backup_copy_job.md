@@ -68,6 +68,7 @@ While Backup Copy Jobs were designed for WAN resiliency, the initial copy is mor
 
 The most frequent synchronization issues are described in the User Guide > [Handling Backup Copy Job Issues](https://helpcenter.veeam.com/backup/vsphere/backup_copy_issues.html).
 
+
 ## Additional Options
 
 ### Restore Point Lookup
@@ -75,8 +76,6 @@ The most frequent synchronization issues are described in the User Guide > [Hand
 By default, after a restart of the job interval (the **Copy every** setting), a backup copy job analyzes the VM list it has to protect, and searches _backwards in time_ for newer restore point states. If the state of the restore point in the target repository is older than the state in the source repository, the new state is transferred.
 
 For example, if the backup job is scheduled to run at 10:20 PM, and the backup copy job uses the default schedule of copying the latest restore point state every day at 10:00 PM, the state copied by the backup copy job is typically one day behind. In the image below, you can see some VMs affected by this behavior.
-
-![Backup Copy Job - example of VMs behind schedule](./backup_copy_job_lookforward.png)
 
 To change this behavior, it is possible to use the `BackupCopyLookForward` registry key as described below. Reevaluating the example above, using this registry key, the backup copy job will still start searching at 10:00 PM, but will now wait for a new restore point state created after this point in time.
 

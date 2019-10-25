@@ -31,10 +31,10 @@ The purpose of Protection Groups within Veeam Backup & Replication is to specify
 Within each manually created Protection Group there are two configuration options within the Protection Group's configuration dialog that should be reviewed carefully: 
 
 - Checkbox: Install backup agent automatically (plus sub-options on the "Options" page of the dialog)
-![Protection Group options](./agent_management_image_protection_group_options.png)
+
 
 - Checkbox: Run discovery when I click Finish (on the "Summary" page of the dialog)
-![Protection Group finish](./agent_management_image_protection_group_finish.png)
+
 
 Both checkboxes are ticked by default which leads to the installation of Veeam Agent components on the computers targeted by the Protection Group as soon as the wizard dialog is closed by clicking the Finish button. This is due to the fact that a rescan job is started directly after finishing the dialog and the "Run discovery" checkbox was ticked. This job updates the Protection Group's member list based on the chosen method and then connects to each computer in the list to deploy the Veeam Installation Service on each newly discovered computer. Then, based on the "Install backup agent automatically" setting and its sub-options, additional software components will be installed on the targeted computers.
 
@@ -45,7 +45,6 @@ As a best practice it is recommended to carefully review and uncheck these optio
 ## Agent Support for Microsoft Failover Clusters
 Veeam Agent for Windows supports backup and restore of Microsoft Failover Clusters which can be targeted by selecting the type "Failover cluster" on the "Job Mode" page of the agent backup job configuration dialog.
 
-![cluster-job](./agent_management_image_jobmode_cluster.png)
 
 As shown in the screenshot above, a backup job of type "Failover cluster" cannot be configured to be "Managed by agent". This is due to the fact that only the lightweight agent version is supported on failover clusters. Additionally, a Protection Group assigned to a backup job of type "Failover cluster" must be of type "Active Directory objects" and the desired cluster object from Active Directory needs to be added to it, either directly or via an object which contains the cluster object (i.e. group or organizational unit). This also allows processing of more than one failover cluster in a single backup job.
 
