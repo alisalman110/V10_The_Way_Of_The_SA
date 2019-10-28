@@ -1,11 +1,10 @@
 # Replication Job
 
-<!-- Ed commented out- not sure if too much detail
+<!--
 
 >**Note:** This section focuses on replicating VMs to your own virtual infrastructure. When implementing Cloud Connect replication for DRaaS only source configuration details of this section are relevant to end user side of the deployment. For more information on implementing DRaaS on Cloud Connect provider side refer to the [Cloud Connect Reference Architecture](https://www.vccbook.io/5.Operations/replication_jobs.html) document.
--->
 
-Replication jobs are used to replicate VMs to another or the same virtual environment (instead of creating deduplicated and compressed backup files at a backup run). Veeam can store up to 28 restore points (on VMware platforms).
+ Replication jobs are used to replicate VMs to another or the same virtual environment (instead of creating deduplicated and compressed backup files at a backup run). Veeam can store up to 28 restore points (on VMware platforms).
 
 Like backup, replication is a job-driven process. In many ways, it works similarly to forward incremental backup:
 
@@ -37,22 +36,23 @@ During the first replication cycle, Veeam Backup & Replication copies these file
 -   Replica restore points (snapshot delta files). During incremental runs, the replication job creates a snapshot delta file in the same folder, next to a full VM replica.
 -   Replica metadata where replica checksums are stored. Veeam Backup & Replication uses this file to quickly detect changed blocks of data between two replica states. Metadata files are stored on the backup repository (source side).
 
-During the first run of a replication job, Veeam Backup & Replication creates a replica with empty virtual disks on the target datastore. Disks are then populated with data copied from the source side.
+During the first run of a replication job, Veeam Backup & Replication creates a replica with empty virtual disks on the target datastore. Disks are then populated with data copied from the source side. -->
 
 To streamline the replication process, you can deploy the backup proxy on a virtual machine. The virtual backup proxy must be registered on an ESXi host with direct connection to the target datastore. In this case, the backup proxy will be able to use the Virtual Appliance (HotAdd) transport mode for writing replica data to target. In case of a NFS datastore at the target location, you can as well use Direct Storage access mode (Direct NFS) to write the data.
+
+<!-- 
+Duplicate of the below section
 
 If the [Virtual Appliance](https://helpcenter.veeam.com/docs/backup/vsphere/virtual_appliance.html?ver=95) mode is applicable, replica virtual disks are mounted to the backup proxy and populated through the ESX I/O stack. This results in increased writing speed and fail-safe replication to ESXi targets. For information on Virtual Appliance mode, see <https://helpcenter.veeam.com/docs/backup/vsphere/virtual_appliance.html?ver=95>.
 
 If the backup proxy is deployed on a physical server, or the Virtual Appliance or Direct NFS mode cannot be used for other reasons, Veeam Backup & Replication will use the [Network](https://helpcenter.veeam.com/docs/backup/vsphere/network_mode.html?ver=95) transport mode to populate replica disk files. For information on the Network mode, see <https://helpcenter.veeam.com/docs/backup/vsphere/network_mode.html?ver=95>.
 
 
-<!-- <<<<<<< HEAD -->
-<!-- Not sure what the above is for so it has been commented out -->
 The Direct SAN mode (as part of Direct Storage Access) can only be used together with replication targets in case of transferring thick-provisioned VM disks at the first replication run. As replication restore points are based on VMware snapshots, that are thin provisioned by definition, Veeam will fail-back to Virtual Appliance (HotAdd) mode or Network mode, if configured at proxy transport settings. Direct SAN mode or backup from storage snapshots can be used on the source side in any scenario.
 
 **Note:** Veeam Backup and Replication supports replicating VMs residing on VVOLs but VVOLs are not supported as a replication target datastore
 
-Replication of encrypted VMs is supported but comes with requirements and limitations outlined in the [corresponding section](https://helpcenter.veeam.com/docs/backup/vsphere/encrypted_vms_backup.html?ver=95u4#replication) of the User Guide. Replication of encrypted VMs is NOT supported when the target is Veeam Cloud Connect.
+Replication of encrypted VMs is supported but comes with requirements and limitations outlined in the [corresponding section](https://helpcenter.veeam.com/docs/backup/vsphere/encrypted_vms_backup.html?ver=95u4#replication) of the User Guide. Replication of encrypted VMs is NOT supported when the target is Veeam Cloud Connect. -->
 
 If the [Virtual Appliance](https://helpcenter.veeam.com/backup/vsphere/virtual_appliance.html?ver=95) mode is applicable, replica virtual disks are mounted to the backup proxy and populated through the ESX I/O stack. This results in increased writing speed and fail-safe replication to ESXi targets. For information on Virtual Appliance mode, see <https://helpcenter.veeam.com/backup/vsphere/virtual_appliance.html?ver=95>.
 
@@ -63,14 +63,15 @@ The Direct SAN mode (as part of Direct Storage Access) can only be used together
 **Note:** Veeam Backup and Replication supports replicating VMs residing on VVOLs but VVOLs are not supported as replication target datastore.
 
 **Note:** Replication of encrypted VMs is supported but comes with requirements and limitations outlined in the [corresponding section](https://helpcenter.veeam.com/docs/backup/vsphere/encrypted_vms_backup.html?ver=95u4#replication) of the User Guide. Replication of encrypted VMs is NOT supported when the target is Veeam Cloud Connect.
+<!--
 
+ ### Onsite Replication
 
-### Onsite Replication
+If the source and target hosts are located in the same site, you can use one backup proxy for data processing and a backup repository for storing replica metadata. The backup proxy must have access to both hosts, source and target. In this scenario, the source-side data mover and the target-side data mover will be started on the same backup proxy. Replication data will be transferred between these two data movers and will not be compressed. -->
 
-If the source and target hosts are located in the same site, you can use one backup proxy for data processing and a backup repository for storing replica metadata. The backup proxy must have access to both hosts, source and target. In this scenario, the source-side data mover and the target-side data mover will be started on the same backup proxy. Replication data will be transferred between these two data movers and will not be compressed.
 
 ### Offsite Replication
-
+<!-- 
 The common requirement for offsite replication is that one Veeam data mover runs in the production site (closer to the source host), and another data mover runs in a remote site (closer to the target host). During backup, the data movers maintain a stable connection, which allows for uninterrupted operation over WAN or slow links.
 
 Thus, to replicate across remote sites, deploy at least one local backup proxy in each site:
@@ -80,8 +81,10 @@ Thus, to replicate across remote sites, deploy at least one local backup proxy i
 
 The backup repository for meta data must be deployed in the production site, closer to the source backup proxy.
 
-**Tip**: It is recommended to place a Veeam backup server on the replica target side so that it can perform a failover when the source side is down. When planning off-site replication, consider advanced possibilities — replica seeding, replica mapping and WAN acceleration. These mechanisms reduce the amount of replication traffic while network mapping and re-IP streamline replica configuration.
+**Tip**:  -->
 
+It is recommended to place a Veeam backup server on the replica target side so that it can perform a failover when the source side is down. When planning off-site replication, consider advanced possibilities — replica seeding, replica mapping and WAN acceleration. These mechanisms reduce the amount of replication traffic while network mapping and re-IP streamline replica configuration.
+<!-- 
 For offsite replication, open the connections between the Veeam backup components:
 
 -   The Veeam backup server must have access to the vCenter Server, the ESXi hosts, the source backup proxy and the target backup proxy.
@@ -95,22 +98,24 @@ In this scenario:
 -   The Veeam backup server in the production site will be responsible for backup jobs (and/or local replication).
 -   The Veeam backup server in the DR site will control replication from the production site to the DR site.
 
-Thus, in disaster situation, all recovery operations (failover, failback and other) will be performed by the Veeam backup server in the DR site. Additionally, it may be worth installing the Veeam Backup Enterprise Manager to have visibility across the two Veeam backup servers so that you only have to license the source virtual environment once (used from both backup servers)
+Thus, in disaster situation, all recovery operations (failover, failback and other) will be performed by the Veeam backup server in the DR site. Additionally, it may be worth installing the Veeam Backup Enterprise Manager to have visibility across the two Veeam backup servers so that you only have to license the source virtual environment once (used from both backup servers) 
 
-**Tip:** Plan for possible failover carefully. DNS and possibly authentication services (Active Directory, for example, or DHCP server if some replicated VMs do not use static addresses) should be implemented redundant across both sides. vCenter Server (and vCD) infrastructure should be as well considered for the failover scenario. In most cases, Veeam does not need a vCenter Server for replica target processing. It can be best practice to add the ESXi hosts from the replica target side (only) directly to Veeam Backup & Replication as managed servers and to perform replication without vCenter Server on the target side. In this scenario a failover can be performed from the Veeam console without a working vCenter Server itself (for example to failover the vCenter Server virtual machine).
+**Tip:** 
+-->
+Plan for possible failover carefully. DNS and possibly authentication services (Active Directory, for example, or DHCP server if some replicated VMs do not use static addresses) should be implemented redundant across both sides. vCenter Server (and vCD) infrastructure should be as well considered for the failover scenario. In most cases, Veeam does not need a vCenter Server for replica target processing. It can be best practice to add the ESXi hosts from the replica target side (only) directly to Veeam Backup & Replication as managed servers and to perform replication without vCenter Server on the target side. In this scenario a failover can be performed from the Veeam console without a working vCenter Server itself (for example to failover the vCenter Server virtual machine).
 
 Replication bandwidth estimation has always been a challenge, because it depends on multiple factors such as the number and size of VMs, change rate (at least daily, per RPO cycle is ideal), RPO target, replication window. Full information about these factors, however, is rarely at hand. You may try to set up a backup job having the same settings as the replication job and test the bandwidth (as the backup job will transfer the same amount of data as the replication job). **Veeam ONE** (specifically Infrastructure Assessment report packs) may help with estimating change rates and collecting other information about the infrastructure.
-
+<!--
 Also, when replicating VMs to a remote DR site, you can manage network traffic by applying traffic throttling rules or limiting the number of data transfer connections. See Veeam Backup & Replication User Guide for more information: <https://helpcenter.veeam.com/docs/backup/vsphere/setting_network_traffic_throttling.html?ver=95>.
 
-**Tip:** Replication can leverage WAN acceleration allowing a more effective use of the link between the source and remote sites. For more information, see the User Guide <https://helpcenter.veeam.com/docs/backup/vsphere/wan_acceleration.html?ver=95> or the present document (the [WAN Acceleration](../resource_planning/wan_acceleration.md) section above).
+ **Tip:** Replication can leverage WAN acceleration allowing a more effective use of the link between the source and remote sites. For more information, see the User Guide <https://helpcenter.veeam.com/docs/backup/vsphere/wan_acceleration.html?ver=95> or the present document (the [WAN Acceleration](../resource_planning/wan_acceleration.md) section above).
 
 
 Also, when replicating VMs to a remote DR site, you can manage network traffic by applying traffic throttling rules or limiting the number of data transfer connections. See Veeam Backup & Replication User Guide for more information: <https://helpcenter.veeam.com/backup/vsphere/setting_network_traffic_throttling.html?ver=95>.
 
 
-**Tip:** Replication can leverage WAN acceleration allowing a more effective use of the link between the source and remote sites. For more information, see the User Guide <https://helpcenter.veeam.com/docs/backup/vsphere/wan_acceleration.html?ver=95> or the present document (the “WAN Acceleration“ section above).
-
+ **Tip:**  Replication can leverage WAN acceleration allowing a more effective use of the link between the source and remote sites. For more information, see the User Guide <https://helpcenter.veeam.com/docs/backup/vsphere/wan_acceleration.html?ver=95> or the present document (the “WAN Acceleration“ section above).
+-->
 ### Replication from Backups
 
 When using replication from backup, the target VM is updated using data coming from the backup files created by a backup or backup copy job.
@@ -120,10 +125,10 @@ In some circumstances, you can get a better RTO with an RPO greater or equal to 
 In this case, the data communication link should be mostly used for the critical VM replicas synchronization with a challenging RPO. Now, assuming that a backup copy job runs for all VMs every night, some non-critical VMs can be replicated from the daily backup file. This requires only one VM snapshot and only one data transfer.
 
 
-You can find additional information about replica from backup in the appropriate section of the Veeam Backup & Replication User Guide: <https://helpcenter.veeam.com/docs/backup/vsphere/replica_from_backup.html?ver=95>
+<!-- You can find additional information about replica from backup in the appropriate section of the Veeam Backup & Replication User Guide: <https://helpcenter.veeam.com/docs/backup/vsphere/replica_from_backup.html?ver=95>
 
 
-You can find additional information about replica from backup in the appropriate section of the Veeam Backup & Replication User Guide: <https://helpcenter.veeam.com/backup/vsphere/replica_from_backup.html?ver=95>
+You can find additional information about replica from backup in the appropriate section of the Veeam Backup & Replication User Guide: <https://helpcenter.veeam.com/backup/vsphere/replica_from_backup.html?ver=95> -->
 
 **Tip:** This feature is sometimes named and used as proactive restore. Together with SureReplica, it is a powerful feature for availability.
 

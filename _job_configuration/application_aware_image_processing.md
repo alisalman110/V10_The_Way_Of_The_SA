@@ -57,7 +57,6 @@ Any Windows server managed by Veeam Backup and Replication can be selected to ac
 
 For details on network configuration refer to the section "Required ports" below.
 
-<!-- Ed removed - too much detail?
 **Tip:** If the backup server has no network connection to the VMs and deploying additional guest interaction proxies is not practical/possible (for example, service provider environments), order in which backup server or guest interaction proxy tries to communicate to a VM can be changed using the following registry key:
 
 |       |     |
@@ -70,14 +69,12 @@ For details on network configuration refer to the section "Required ports" below
 |       |     |
 
 RPC connection means injecting the file via the "ADMIN$" share on the target VM. See Veeam Knowledge Base article at <https://www.veeam.com/kb1230> for more information. Consider that this is a global setting that will be applied on the Veeam backup server level and affects all jobs with application-aware image processing.
--->
+
 ## Guest Access Credentials
 
 Depending on the VM guest OS processing options selected (enabled or disabled application-aware image processing) and on the guest access method, you may need to supply access credentials for the guest OS, as described in the tables below.
 
-<!-- 
-**Tip:** To verify the credentials you supplied on the Guest Processing step of the job wizard, click **Test Now** button.
--->
+
 ### Windows OS
 
 | Application-Aware Image Processing (AAIP) | VMware Tools Quiescence | Veeam via VIX | Veeam via RPC | Disabled (crash-consistent) |
@@ -97,41 +94,18 @@ Depending on the VM guest OS processing options selected (enabled or disabled ap
 | VMware Tools must be installed and up to date | Yes | Yes | No |
 
 
-## Required Ports
 
-The following ports should be open between the Veeam backup server and VM for guest OS processing:
-
--   For Windows VMs - remote RPC ports, including Dynamic Port Range (TCP ports 1025 to 5000 - for Microsoft Windows 2003, 49152-65535 - for Microsoft Windows 2008 and newer); TCP/UDP ports 135, 137-139, 445.
--   For Linux VMs – SSH port (default is TCP port 22)
-
-For details, refer to the Veeam Backup & Replication User Guide (https://helpcenter.veeam.com/docs/backup/vsphere/used_ports.html?ver=95).
 
 ## Sizing
 
 Since guest processing produces very low impact on VM performance, no special considerations on sizing are required. If you use VSS processing with VMware Tools quiescence or Veeam in-guest processing, you need free space on each drive of the VM for the software VSS snapshot. Please check Microsoft requirements for more information.
 
-## File exclusions
-
-Another operation Veeam Backup can do on guest OS level (NTFS only) is excluding certain files or folders from the backup. Alternatively the job can be configured to include only specified files or folders in the backup.
-
-This functionality operates very similarly and shares a lot of characteristics with excluding Windows page file and deleted file blocks. It may help reduce size of the backup files or implement additional data protection strategies for specific data. Backups for which this option was enabled remain image-level and hypervisor APIs are used to retrieve VM data. File exclusion feature uses a combination of NTFS MFT data and guest file system indexes collected by in-guest coordination process to determine which virtual disk blocks belong to the excluded files and thus should not be included in the backup.
-
-Full file/folder paths, environment variables or file masks can be used to define exclusions. For more details on configuring exclusions and its limitations refer to the [corresponding User Guide section](https://helpcenter.veeam.com/docs/backup/vsphere/guest_file_exclusion.html?ver=95).
-
-**Note:** Generic file exclusions (defined for high level folders) are most effective. File masks exclusions require guest file system indexes and generating indexes may put additional stress on guest VM and will increase backup time. For this reason it is recommended to avoid using file system masks especially on fileservers with large number (thousands) of small files and use high level folder exclusions instead. When using include filters, file exclusions are
-created for everything else and can take significant time.
-
-### How file exclusion works
-
-For each VM in a job that has exclusions enabled Veeam Backup and Replication performs the following operations:
-1. Virtual machine NTFS MFT is read into the memory cache on the backup proxy, data blocks that store excluded files are marked as deleted.
-2. When sending data blocks to target repository data is read both from the VM snapshot and memory cache on the backup proxy. Target repository reconstructs VM disks without excluded VM blocks.
-3. Virtual machine NTFS is modified using the data in the cache on the proxy and information about excluded data blocks is saved in the backup file or replica metadata. This information is necessary as CBT is not aware of which blocks were excluded and is used to determine which blocks should be processed during the next backup session.
 
 ---
 
 <!-- footnotes -->
-[^1]: Only this account is able to
+
+ [^1]: Only this account is able to
 bypass the UAC prompt for launching processes
 with administrative privileges. If not applicable,
 see [^2].
@@ -150,4 +124,4 @@ unless the user account is the local administrator account
 | Type  | REG_DWORD (32-bit) |
 | Value | **1** = _disable token filter and **allow** remote management by local administrative accounts_
 |       | **0** (default) = _enable token filter and **do not allow** remote management by local accounts_|
-|       |     |
+|       |     | 

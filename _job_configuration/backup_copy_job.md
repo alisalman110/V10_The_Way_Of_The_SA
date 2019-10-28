@@ -1,6 +1,6 @@
 # Backup Copy Job
 
-Instead of just copying backup files to a second destination, Veeam uses a more intelligent and secure way of bringing restore points to a second backup target. Backup copy jobs read specific VM restore points from backup files and store them as a new backup file chain on the destination. The second chain is independent from the first chain and adds therefore an additional level of protection. You can store VMs from multiple backup jobs in the same backup copy job, or you can select a subset of VMs from a bigger backup job as source if you do not want to backup all VMs to the backup copy job destination.
+<!-- Instead of just copying backup files to a second destination, Veeam uses a more intelligent and secure way of bringing restore points to a second backup target. Backup copy jobs read specific VM restore points from backup files and store them as a new backup file chain on the destination. The second chain is independent from the first chain and adds therefore an additional level of protection. You can store VMs from multiple backup jobs in the same backup copy job, or you can select a subset of VMs from a bigger backup job as source if you do not want to backup all VMs to the backup copy job destination.
 
 Every backup copy job creates its own folder on the target backup repository and stores its data in this location. The folder has the same name as the backup copy job.
 
@@ -12,10 +12,12 @@ Backup copy jobs file chains layout will depend on the repository option: "Per V
 
 If a backup copy job cannot process all requested VMs before the end of an incremental execution interval (by default 24 hours), the job will still create backup files on the target backup repository for per-vm chains however some VMs could be left inconsistent or in an unprotected state. In the case of non per-vm chains this will fail with an error. This might be caused by precedence of the backup task over the backup copy task. The backup copy process will resume from the last full data transaction during the next synchronization interval.
 
-Limitations of backup copy jobs are described in Veeam Backup & Replication User Guide at <https://helpcenter.veeam.com/backup/vsphere/backup_copy_select_point.html>.
+Limitations of backup copy jobs are described in Veeam Backup & Replication User Guide at <https://helpcenter.veeam.com/backup/vsphere/backup_copy_select_point.html>. 
 
-**Important Note:** Jobs with WAN acceleration enabled will process VMs sequentially, while jobs using direct mode will process included VMs in parallel according to free task slots availability on backup repositories.
-
+**Important Note:** 
+-->
+Jobs with WAN acceleration enabled will process VMs sequentially, while jobs using direct mode will process included VMs in parallel according to free task slots availability on backup repositories.
+<!-- 
 ## Backup Copy Job Scheduling
 
 By design, a backup copy job is a process that runs continuously. This process includes several stages.
@@ -70,7 +72,7 @@ The most frequent synchronization issues are described in the User Guide > [Hand
 
 
 ## Additional Options
-
+ -->
 ### Restore Point Lookup
 
 By default, after a restart of the job interval (the **Copy every** setting), a backup copy job analyzes the VM list it has to protect, and searches _backwards in time_ for newer restore point states. If the state of the restore point in the target repository is older than the state in the source repository, the new state is transferred.
@@ -86,7 +88,7 @@ To change this behavior, it is possible to use the `BackupCopyLookForward` regis
 
 The following forum thread provides a very good explanation of the backup copy scheduler and the LookForward registry key > [Veeam Community Forums - Backup Copy Intervals](https://forums.veeam.com/veeam-backup-replication-f2/backup-copy-intervals-t24238.html)
 
-### Backup Copy from Backup Copy
+<!-- ### Backup Copy from Backup Copy
 
 Since v8, it is possible to use a backup copy job as a source for data transfer and to generate another backup copy. For this, select the VMs from infrastructure and specify the backup repository holding the primary backup copy restore points as the source.
 
@@ -103,4 +105,4 @@ Usually, a backup copy is used to send data remotely. If it is necessary to send
 
 If you are using a WAN accelerated transfer, refer to the WAN Accelerator section for proper cache population procedure: <https://helpcenter.veeam.com/backup/vsphere/wan_populate_cache.html>.
 
-**Note:** Only the initial first run of a reverse incremental chain can be used with seeding (but any forward incremental chain can be used). See [kb1856](https://www.veeam.com/kb1856) for more information.
+**Note:** Only the initial first run of a reverse incremental chain can be used with seeding (but any forward incremental chain can be used). See [kb1856](https://www.veeam.com/kb1856) for more information. -->
