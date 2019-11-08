@@ -5,6 +5,7 @@ In this section, we will describe how to configure and size the Veeam backup ser
 Sizing with Veeam is cumulative in respect to configurations, if you want to create an all-in-one appliance (Appliance Model) add all the resource requirements together (CPU + Memory) to understand what in total you will need, combining roles such as the proxy and repository merits the same considerations
 
 ## Compute requirements
+
 Recommended Veeam backup server configuration is **1 CPU core (physical or virtual) and 4 GB RAM per 10 concurrently running jobs**. Concurrent jobs include any running backup or replication jobs as well as any job with a continuous schedule such as backup copy jobs and tape jobs.
 
 The minimum recommendation is 2 CPU cores and 8 GB RAM.
@@ -14,28 +15,32 @@ It is recommended to group multiple virtual machines into a single job for bette
 All configuration and session information is stored in the configuration database. In larger environments the load on the SQL Server hosting the configuration database may be significant and is highly dependent on the amount of concurrently running jobs. For more information please see the [Backup Server Database](./backup_server_database.md) section of this guide.
 
 ## Operating system
+
 The Veeam backup server requires Microsoft Windows 2008 R2 or later (64-bit only).
 The latest supported version of Windows OS is always recommended (currently
 Microsoft Windows 2016) as it will also support restoring from virtual
 machines with ReFS file systems or workloads with Windows Server Deduplication enabled.
 
-For the full list of supported operating systems,
+For the full list of supported operating systems, 
 please refer to the corresponding [System Requirements](https://helpcenter.veeam.com/docs/backup/vsphere/system_requirements.html?ver=95#backup_server)
 section of the Veeam User Guide.
 
 ## Disk space
+
 This section explains what folders you should plan for when preparing
 for installation of the Veeam backup server.
 
 The folders are detailed here as follows:
 
 ### Installation folder
-Default location is `C:\Program Files\Veeam\Backup and Replication`
+
+Default location is `C:\Program Files\Veeam\Backup and Replication` 
 
 Plan for 40 GB. If installing in a virtual machine, thin disks may be used. By default the installer will choose the drive with most available free space for the built in backup repository.
 
 ### Log files
-Default location is `C:\ProgramData\Veeam\Backup`
+
+Default location is `C:\ProgramData\Veeam\Backup` 
 
 Log file growth will depend on the number and frequency of jobs and the number of instances being protected. Consider that the logging level may also affect the log size, if you need to change the logging level or log file location refer to this Veeam Knowledge Base article: <https://www.veeam.com/kb1825>.
 
@@ -44,12 +49,14 @@ It is recommended to not configure the logging level below 4, as it may complica
 Plan for 3 GB log files generated per 100 protected instances, with a 24 hour RPO. For environments with more than 500 protected instances it is recommended to change the default location to a different fast access disk. Many concurrently running jobs may produce a lot of write streams to log files, than can slow down operations for the Veeam Backup Service and Backup Manager processes.
 
 ### Veeam Backup Catalog folder
-Default location is `C:\VBRCatalog`
+
+Default location is `C:\VBRCatalog` 
 
 This folder is used if guest indexing in backup jobs is enabled. For more information, refer to the [Guest  Indexing](resource_planning/search_server_and_indexing.md) section of this guide. To change the default location, refer to this Veeam Knowledge Base article: <https://www.veeam.com/kb1453>
 
 ### vPower NFS folder
-Default location is `C:\ProgramData\Veeam\Backup\NfsDatastore`
+
+Default location is `C:\ProgramData\Veeam\Backup\NfsDatastore` 
 
 When booting VMs with Instant VM Recovery or SureBackup, this folder is used by default to store all configuration files and redo logs of the running VM. To offload the changes to a specific production datastore refer to the corresponding page of the Instant VM Recovery wizard.
 
@@ -95,3 +102,4 @@ and tape servers).
 
 **Note:** As Veeam deploys no agents on the virtual machines, you do
 not need to update any software (agents) on the VMs.
+
