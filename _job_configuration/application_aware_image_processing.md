@@ -13,16 +13,6 @@ When configuring Veeam backup and replication jobs, you can specify how the tran
 | Interaction with user via UI | Not needed | Not needed |
 | Error reporting | Within VM guest OS | Centralized, on Veeam backup server |
 
-## How Veeam Guest OS Processing Works
-
-1.  First, Veeam Backup & Replication performs guest OS inventory to find out if there is a VSS-aware application running inside a VM.
-2.  Veeam Backup & Replication runs pre-freeze script (if any) for the Microsoft Windows/Linux guest OS with applications that utilize other means of VM quiescence.
-3.  Then VSS quiescence of the VM is performed, including restore awareness settings.
-4.  VM snapshot is created.
-5.  VSS unfreeze (“thaw”) is performed.
-6.  Veeam Backup & Replication runs post-thaw script (if any) for the Microsoft Windows/Linux guest OS.
-7.  Backup data transfer and snapshot commit is performed.
-8.  Finally, log file truncation is performed with VSS (for Microsoft SQL Server and Exchange Server) or using native Oracle commands (for Oracle databases on Linux).
 
 ## Selecting Guest Processing Options
 

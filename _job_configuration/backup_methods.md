@@ -1,5 +1,3 @@
-<!--- Last edited: Luca Dell'Oca on 03-05-2017 --->
-
 # Backup Methods
 
 Veeam Backup & Replication stores backups on disk using a simple, self-contained file based approach. However, there are several methods to create and store those files on the file system. This section will provide an overview of these methods, their pros and cons, as well as recommendations on use cases for each one.
@@ -10,15 +8,15 @@ As a generic overview for I/O impact of the backup modes, please see this table:
 
 | Method                                     | I/O impact on destination storage                             |
 | ------------------------------------------ | ------------------------------------------------------------- |
-| Forward incremental                        | 1$\times$ write I/O for incremental backup size               |
-| Forward incremental, active full           | 1$\times$ write I/O for total full backup size                |
-| Forward incremental, transform             | 2$\times$ I/O (1x read, 1x write) for incremental backup size |
-| Forward incremental, synthetic full        | 2$\times$ I/O (1x read, 1x write) for entire backup chain     |
-| Reversed incremental                       | 3$\times$ I/O (1x read, 2x write) for incremental backup size |
-| Synthetic full with transform to rollbacks | 4$\times$ I/O (2x read, 2x write) for entire backup chain     |
+| Forward incremental                        | 1 x write I/O for incremental backup size               |
+| Forward incremental, active full           | 1 x write I/O for total full backup size                |
+| Forward incremental, transform             | 2 x I/O (1x read, 1x write) for incremental backup size |
+| Forward incremental, synthetic full        | 2 x I/O (1x read, 1x write) for entire backup chain     |
+| Reversed incremental                       | 3 x I/O (1x read, 2x write) for incremental backup size |
+| Synthetic full with transform to rollbacks | 4 x I/O (2x read, 2x write) for entire backup chain     |
 | | |
 
-While changing backup mode is one way of reducing amount of I/O on backup repository it is also possible to leverage features of the filesystem to avoid extra I/O. Currently Veeam Backup and Replication supports advanced features of one filesystem, Microsoft ReFS 3.1 (available in Windows Server 2016), to completely eliminate unnecessary read/write operations in certain configurations. For more details refer to the corresponding section of this guide. *[ReFS chapter is working in progress]*
+While changing backup mode is one way of reducing amount of I/O on backup repository it is also possible to leverage features of the filesystem to avoid extra I/O. Currently Veeam Backup and Replication supports advanced features of one filesystem, Microsoft ReFS 3.1 (available in Windows Server 2016), to completely eliminate unnecessary read/write operations in certain configurations. For more details refer to the corresponding section of this guide.
 
 ## Forward Incremental
 

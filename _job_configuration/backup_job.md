@@ -28,24 +28,11 @@ Tags are very convenient for a policy driven approach to data protection. Howeve
 -   Using tags, you can classify VMs by service levels, using different backup jobs for different service levels
 -   Veeam ONE Business View (OBV) is a very convenient tool for managing vSphere Tags. OBV allows for creating classification rules and update corresponding tags in vCenter. Classifications can be defined from CPU, RAM, VM naming convention, folder, resource pool, datastore etc. OBV can also import VM/host/datastore descriptions from a CSV file. This feature can be useful when refreshing VMware tags, for example, to update a CMDB.
 
-<!--
 #### Exclusions
 It is recommended to limit the number of exclusions in backup jobs. While exclusions can be very useful, the virtual infrastructure is dynamic and changes rapidly. It is quite possible that a VM gets moved to a folder or resource pool that is excluded which makes it unprotected. Monitoring [Protected VMs](https://helpcenter.veeam.com/docs/one/reporter/protected_vms.html?ver=95) with Veeam ONE is highly recommended.
 
 Also remember that exclusions have higher priority over inclusions in Veeam Backup & Replication.
 
-### Compression and Storage Optimization
-
-Detailed descriptions of compression and storage optimization settings and their influence on the backup infrastructure is provided in the [Deduplication and Compression](./deduplication_and_compression.md) section of this guide. In almost all cases deduplication should be left enabled. Veeam Backup & Replication uses source side deduplication which decreases the amount of data that must be transferred to the target repository.
-
-When using a deduplication appliance for storing backups, please see the [Deduplication Appliances](/resource_planning/repository_type_dedupe.md#job-configuration) section of this guide for a detailed description of compression and storage optimization settings.
-
-### Encryption
-
-A detailed description of encryption settings and its influence on the backup infrastructure is provided in the [Encryption](./encryption.md) section above in this document.
-
-For general guidelines about encryption, refer to the Veeam User Guide: [Encryption keys](https://helpcenter.veeam.com/backup/vsphere/encryption_keys.html).
--->
 ## Storage maintenance
 While data amount is growing and backup window is decreasing, forward incremental forever backups have become increasingly important in any backup solution. Backup jobs with no scheduled synthetic or active full backups are becoming more widely adopted. Forward incremental with weekly synthetic full backups is however still the default setting.
 
@@ -59,18 +46,16 @@ To address both objections, following features are available under the "Maintena
 
 ### Full backup file maintenance - "Defragment and compacting"
 Full backup file maintenance will address two issues: VBK file fragmentation caused by transforms (forward incremental forever or reverse incremental) and left over whitespace from deleted data blocks. These issues are mitigated by synthesizing a new full backup file on the backup repository, i.e. copying blocks from the existing VBK file into a new VBK file, and subsequently deleting the original file. This process may also be referred to as "compacting".
-<!--
+
 **How does it work?** During VBK compacting, a new VBK file is created. Existing blocks are copied from the previous VBK, requiring free space equivalent to the size of an additional full backup in the repository. In the [Restore Point Simulator](http://vee.am/rps), this space is part of the "Work space" parameter. When using Scale-out Backup Repository in Performance Mode, the compacting process may utilize multiple extents and significantly speed up the compacting process.
--->
+
 **When to use?** For every backup job with full transforms. Defragmentation will benefit most jobs that are configured to generate a single chain per job, keeping files smaller and restore optimal speed over time.
 
 **When to avoid?** When using deduplication storage, it is recommended to disable the "Defragment and compact" option. As deduplication appliances are fragmented by their very nature and also have very poor support for random I/O workloads, the compacting feature will not enhance backup or restore performance.
 
 ### Storage-level corruption guard
 In addition to using SureBackup for restore validation, storage-level corruption guard was introduced to provide a greater level of confidence in integrity of the backups.
-<!--
-**How does it work?** When a job has finished, storage-level corruption guard will perform a CRC verification for the most recent restore point. It will validate whether the contents of the backup chain blocks match the content described within the backup file metadata. If a mismatch is discovered, it will attempt to repair the data block from production storage, assuming the block still exists and has not been overwritten. If it exists, the backup file will be repaired. If not, storage-level corruption guard will fail and make the user aware that a new full backup is required, and that the backup chain must be recovered from a secondary copy of the backup.
--->
+
 **When to use?** It is recommended to use storage-level corruption guard for any backup job with no active full backups scheduled. Synthetic full backups are still "incremental forever" and may suffer from corruption over time.
 
 **When to avoid?** It is highly discouraged to use storage-level corruption guard on any storage that performs native "scrubbing" to detect silent data corruptions. Such storage will automatically heal silent data corruptions from parity disks or using erasure coding. This is the case for most deduplication appliances.
@@ -92,16 +77,12 @@ For more details on load balancing, refer to the Veeam Backup & Replication User
 
 ## Binding Jobs to Specific Proxies
 
-<!-- Refer to the User Guide in order to examine the advanced deployment scenario with multiple proxies: [Advanced deployments](https://helpcenter.veeam.com/docs/backup/vsphere/advanced.html?ver=95). -->
-
 While configuring a backup job, you can disable the automatic proxy selection. Instead, you can select particular proxies from the list of proxies managed by Veeam backup server, and assign them to the job. This is a very good way to manage distributed infrastructures; also it helps you to keep performance under control.
 
 For example, you can back up a cluster residing on a multiple blade chassis. In this case, if using virtual proxies, keep the proxies' load well-balanced and optimize the network traffic.
 
 Dedicated proxies can be also very helpful if you use a stretched cluster and do not want proxy traffic to cross over inter-switch links.
 
-<!-- See the illustration below as a good starting point to reach and keep control on high backup throughput. In this example, administrator wants to keep network traffic as much as possible inside the chassis; only the proxy-to-repository traffic goes via an external link.
-
-You can use [Proxy Affinity](https://helpcenter.veeam.com/docs/backup/vsphere/proxy_affinity.html?ver=95) to allow only specific proxies to interact with a given repository. -->
+You can use [Proxy Affinity](https://helpcenter.veeam.com/docs/backup/vsphere/proxy_affinity.html?ver=95) to allow only specific proxies to interact with a given repository.
 
 **Tip:** To optimize load balancing in a distributed environment where backup proxies are located in multiple sites, it is recommended to select all proxies from the same site in the corresponding job.
