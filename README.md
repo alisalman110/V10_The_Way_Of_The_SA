@@ -1,3 +1,5 @@
-This is the new home for Veeam V10 Best Practice
+# Veeam Backup and Replication Best Practices Guide
 
-Please use branches and do not merge to the master
+* [Planning and Preparation](preparation/README.md)
+* [Deployment and Configuration](deployment/README.md)
+* [Operation](operation/README.md)
